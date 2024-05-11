@@ -1,0 +1,89 @@
+<form
+        action=""
+        className=" flex flex-col  bg-gray-200 w-4/6 rounded-xl h-fit p-4"
+      >
+        <div className="flex">
+          <div className="flex flex-col w-3/6">
+            <Label name={"UserName"} />
+            <InputField
+              id={"UserName"}
+              name={"UserName"}
+              type={"text"}
+              onBlur={formik.handleBlur}
+              placeholder={"Enter UserName"}
+              value={formik.values.UserName}
+              setFunction={formik.handleChange}
+            />
+            {formik.errors.UserName && formik.touched.UserName ? (
+              <div className="text-sm text-red-400">
+                {formik.errors.UserName}
+              </div>
+            ) : null}
+            <Label name={"Email"} />
+            <InputField
+              id={"Email"}
+              name={"Email"}
+              type={"text"}
+              onBlur={formik.handleBlur}
+              placeholder={"Email"}
+              value={formik.values.Email}
+              setFunction={formik.handleChange}
+            />
+            {formik.errors.Email && formik.touched.Email ? (
+              <div className="text-sm text-red-400">{formik.errors.Email}</div>
+            ) : null}
+            <Label name={"Mobile"} />
+            <InputField
+              id={"Mobile"}
+              name={"Mobile"}
+              type={"Number"}
+              onBlur={formik.handleBlur}
+              placeholder={"Mobile"}
+              value={formik.values.Mobile}
+              setFunction={formik.handleChange}
+            />
+            {formik.errors.Mobile && formik.touched.Mobile ? (
+              <div className="text-sm text-red-400">{formik.errors.Mobile}</div>
+            ) : null}
+            <Label name={"Gender"} />
+           
+            <Label name={"DateofBirth"} />
+            <InputField
+              id={"DateofBirth"}
+              name={"DateofBirth"}
+              type={"Date"}
+              onBlur={formik.handleBlur}
+              placeholder={"DateofBirth"}
+              value={formik.values.DateofBirth}
+              setFunction={formik.handleChange}
+            />
+            {formik.errors.DateofBirth && formik.touched.DateofBirth ? (
+              <div className="text-sm text-red-400">
+                {formik.errors.DateofBirth}
+              </div>
+            ) : null}
+          </div>
+          <div className="flex flex-col ml-4">
+            <Label name={"Image of User"} />
+            <InputField
+              id={"Image"}
+              name={"Image"}
+              type={"file"}
+              onBlur={formik.handleBlur}
+              placeholder={"Image of user"}
+              value={formik.values.Image}
+              setFunction={formik.handleChange}
+            />
+            {formik.errors.Image && formik.touched.Image ? (
+              <div className="text-sm text-red-400">{formik.errors.Image}</div>
+            ) : null}
+          </div>
+        </div>
+        <div className="flex justify-around">
+          <Button btnName={"Submit"} clickHandler={formik.handleSubmit} />
+          <Button
+            btnName={"Cancel"}
+            clickHandler={() => setShowEditProfiePage(false)}
+          />
+        </div>
+      </form>
